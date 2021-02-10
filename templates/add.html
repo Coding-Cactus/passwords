@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %} - {{button}}{% endblock %}
+
+{% block head %}
+<script src="https://kit.fontawesome.com/6ddb159fca.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block main %}
+<p><a href='/' style='color: #777;'><i class="fas fa-arrow-left"></i></a></p>
+<form role="form" method='POST' action='{{url}}'>
+	<input autocomplete="off" type="text" name="name" placeholder="Enter website/username" value='{{name}}' required>
+	<input autocomplete="off" type="password" name="password" placeholder="Enter password" value='{{password}}' required>
+	<div class='randPass' onclick='randomPassword(this)'>Generate random password</div>
+	<button type="submit">{{button}}</button>
+</form>
+
+{% endblock %}
+
+{% block other %}
+<script src="/static/script.js"></script>
+{% endblock %}

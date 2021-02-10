@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Kalam&family=Oxygen&family=Oxygen+Mono&family=Quicksand&display=swap');
+
+:root {
+	--nav-background: #3193b2;
+	--nav-color: #2ae42a;
+	--nav-a-hover-background: rgba(30,228, 30, 0.25);
+	--background: #3686fc;
+	--text-color: #333;
+	--text-form-color: #777;
+	--form-background: #acf;
+	--focus: #357;
+	--form-button-hover: #9bd;
+	--list: #1aaed6;
+	--shadow: rgba(30, 20, 255, 0.5);
+	--button: rgba(200, 200, 200, 0.5);
+	--button-border: rgba(25, 25, 100, 0.5);
+	--button-hover: rgba(175, 175, 200, 0.5);
+	--field-background: rgba(150, 200, 200, 0.25);
+	--scrollbar-thumb: #0aa;
+	--scrollbar-thumb-hover: #099;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	margin: 50px 10px;
+	background-color: var(--background);
+	color: var(--text-color);
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 5px 0px;
+	width: 100vw;
+	font-size: 20px;
+	background-color: var(--nav-background);
+	box-shadow: 0 0 10px var(--shadow);
+	z-index: 9999;
+}
+nav ul {
+	margin-right: 30px;
+}
+
+nav ul li {
+	display: inline;
+}
+
+
+nav ul li a {
+	text-align: center;
+	color: var(--nav-color);
+	text-decoration: none;
+	padding: 0 5px;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+nav ul li a:hover {
+	background-color: var(--nav-a-hover-background);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oxygen', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#error {
+	font-family: 'Balsamiq Sans', cursive;
+	color: #c00;
+}
+
+a {
+	font-family: 'Kalam', cursive;
+}
+
+code, .password {
+	font-family: 'Oxygen Mono', monospace;
+}
+
+form{
+	display: block;
+	position: absolute;
+	width: 30vw;
+	padding: 10px 5px;
+	top: 20vh;
+	left: 35vw;
+}
+
+input, button, .randPass{
+	display: block;
+	width: 75%;
+	height: 35px;
+	font-size: 100%;
+	line-height: 100%;
+	margin: auto;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: var(--text-form-color);
+  background-color: var(--form-background);
+}
+
+input:focus, button:focus {
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+
+button, input[type='submit'], input[type='button'] {
+  padding: 0 20px;
+	cursor: pointer;
+}
+
+button:hover, input[type='submit']:hover, input[type='button']:hover {
+  background: var(--form-button-hover);
+}
+
+button:active, input[type='submit']:active, input[type='button']:active {
+  transform: translateY(5px);
+}
+
+#list {
+	background-color: var(--list);
+	text-align: center;
+	padding: 10px 0;
+	width: 60vw;
+	margin: 30px auto;
+	font-size: 25px;
+	border-radius: 15px;
+  box-shadow: 0px 0px 5px var(--shadow);
+}
+
+#list p {
+	width: 90%;
+	height: auto;
+	background-color: transparent;
+	border: 1px solid var(--nav-color);
+	border-radius: 15px;
+	transition: all 0.25s;
+	margin: auto;
+}
+
+#list p a {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	color: var(--nav-color);
+	text-decoration: none;
+	transition: all 0.25s;
+}
+
+#list p:hover {
+	background-color: var(--nav-color);
+}
+
+#list p:hover a {
+	color: var(--list)
+}
+
+#innerList {
+	margin: 10px auto;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	background-color: rgba(0, 0,0, 0.05);
+	width: 90%;
+	border-radius: 15px;
+	padding: 10px 0;
+}
+
+.listItem {
+	padding: 5px 0;
+	margin: 0 auto;
+	border-radius: 10px;
+	width: 100%;
+}
+
+.name, .password{
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	width: 25%;
+	padding: 5px;
+	overflow-y: hidden;
+	overflow-x: auto;
+	vertical-align: middle;
+	text-align: left;
+	background-color: var(--field-background);
+	border-radius: 5px;
+	white-space: nowrap;
+	font-size: 20px;
+}
+
+
+.show, .copy, .remove, .edit{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.show, .copy, .remove, .edit {
+	height: 35px;
+	width: 30px;
+	line-height: 35px;
+	user-select: none;
+	border-radius: 50%;
+	padding: 2.5px;
+}
+
+.remove a, .edit a {
+	width: 100%;
+	height: 100%;
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+/*
+.copy, .remove a , .edit a{
+	background-color: var(--button);
+	border: 2px solid var(--button-border);
+	border-radius: 5px;
+	padding: 0 5px;
+	font-family: 'Kalam', cursive;
+	font-size: 20px;
+	vertical-align: middle;
+	user-select: none;
+}
+
+.copy:hover, .remove a:hover, .edit a:hover {
+	background-color: var(--button-hover);
+	cursor: pointer;
+}
+*/
+
+.show:hover, .copy:hover, .remove:hover, .edit:hover  {
+	background-color: rgba(100, 200, 200, 0.5);
+	cursor: pointer;
+}
+
+.copy { position: relative; }
+
+.hiddenCopy {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 42.5px;
+	font-size: 20px;
+	padding: 0 2.5px;
+	background-color: #2376b2;
+	border: 1px solid #026;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.randPass {
+	background-color: #28a;
+	border-radius: 10px;
+	padding: 5px;
+	line-height: 200%;
+	font-size: 100%;
+	color: #ccc;
+	margin-bottom: 2px;
+}
+
+.randPass:hover {
+	cursor: pointer;
+	background-color: #279;
+}

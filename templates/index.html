@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="https://kit.fontawesome.com/6ddb159fca.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block nav %}
+{% if not loggedIn %}
+	<ul>
+		<li><a href="/signup">sign up</a></li>
+		<li><a href="/login">log in</a></li>
+	</ul>
+{% else %}
+	<ul>
+		<li><a href="/logout">log out</a></li>
+		<li style='float: right; color:#ccc;'>Logged in as <strong>{{session['user']}}</strong></li>
+	</ul>
+{% endif %}
+{% endblock %}
+
+
+{% block main %}
+
+<h1>Password Saver</h1>
+
+{% if loggedIn %}
+
+
+<div id='list'>
+	<p><a href='/add'>add</a></p>
+	<div id='innerList'>
+		{% for i in db %}
+		<div class='listItem'>
+			<span class='name'>{{db[i]['name']}}</span>
+			<span class='password'>{{decode(db[i]['password'])}}</span>
+			<span class='show' onclick="showOrHide(this)"><i class="fas fa-eye"></i></span>
+			<span class='copy' onclick="copy(this)"><i class="far fa-copy"></i><div class='hiddenCopy'>copied!</div></span>
+			<span class='edit'><a href='/edit/{{i}}'><!--i class="far fa-edit"></i--><i class="fas fa-pencil-alt"></i></a></span>
+			<span class='remove'><a href='/remove/{{i}}' onclick="return confirm('Are you sure you want to remove this?')"><i class="far fa-trash-alt"></i></a></span>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
+{% else %}
+
+<p>You aren't logged in!</p>
+
+{% endif %}
+
+{% endblock %}
+
+{% block other %}
+<script src="/static/script.js"></script>
+{% endblock %}
